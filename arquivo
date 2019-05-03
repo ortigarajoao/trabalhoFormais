@@ -1,0 +1,15 @@
+(automato|gramatica|er)
+
+automato
+S|alfabeto[1]|alfabeto[2]|...|afabeto[n]
+->Inicial|
+
+gramatica
+S->aA|bB
+A->a
+B->b
+(Obs: S é o simbolo inicial, simbolos terminais sao minusculos, Producoes
+sao maisculas, - e > sao reservados)
+
+er
+(a)*
