@@ -5,9 +5,21 @@
 
 class Estado{
 
+public:
+
+  Estado();
+  Estado(std::string rotulo);
+  ~Estado();
+
+
+  void setaRotulo(std::string rotulo);
+
 
 private:
+
   std::unordered_multimap<char,Estado*> _adjacentes;
+  std::string _rotulo;
+
 };
 
 #endif //ESTADO_H
