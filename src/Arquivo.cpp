@@ -32,8 +32,46 @@ Automato* Arquivo::geraAutomato(){
         Automato* r = new Automato(alfabeto);
         Estado* e = new Estado();
         int pos = 0;
+        int pos1 = 0;
+
+        if(linhaAtual.find("*") != std::strig::npos){
+          r.adicionaEstadoFinal(e);
+        }
+
         if(linhaAtual.find("->") != std::string::npos){
           r.setaEstadoInicial(e);
+        }
+
+        pos = linhaAtual.find_first_of(">");
+        pos1 = linhaAtual.find_first_of("|");
+        e.setaRotulo(linhaAtual.substr(pos+1, pos1-(pos+1)));
+
+        linhaAtual = this->lelinha();
+
+        while(linhaAtual != std::string::npos){ //pega estados
+          Estado* e = new Estado();
+          pos = -1;
+          if(linhaAtual.find("*") != std::strig::npos){
+            r.adicionaEstadoFinal(e);
+            pos = linhaAtual.find_first_of("*");
+          }
+          pos1 = linhaAtual.find_first_of("|");
+          e.setaRotulo(linhaAtual.substr(pos+1,pos1-(pos+1)));
+          r.adicionaEstado(e));
+          linhaAtual = this->leLinha();
+        }
+
+        _streamArquivo.seekg(0, _streamArquivo.beg);
+        this->leLinha();
+
+        linhaAtual = this->lelinha();
+
+        whiele()
+
+
+
+
+
         }
         while(_streamArquivo.good()){
             int pos1 = linhaAtual.find_first_of(">");
@@ -42,7 +80,7 @@ Automato* Arquivo::geraAutomato(){
             pos = pos2;
             while(pos != std::string::npos){
               pos2 = linhaAtual.find_first_of("|", pos+1);
-              
+
 
             }
         }

@@ -13,6 +13,7 @@ public:
 
 
   void setaRotulo(std::string rotulo);
+  void adicionaAresta(char c, Estado* e);
 
 
 private:
